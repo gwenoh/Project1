@@ -16,6 +16,8 @@ def getData(file):
 	dList = []
 	next(lines)
 
+	#making a change to see what happens
+
 	for line in lines:
 		dic = {}
 
