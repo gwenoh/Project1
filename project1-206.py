@@ -103,8 +103,15 @@ def mySortPrint(a,col,fileName):
 # as fist,last,email
 #Input: list of dictionaries, col (key) to sort by and output file name
 #Output: No return value, but the file is written
+	outFile = open(fileName, "w")
+	sorteddata = sorted(a, key=lambda x:x[col])
+	for x in sorteddata:
+		first = x["First"]
+		last = x["Last"]
+		email = x["Email"]
+		outFile.write(first + "," + last + "," + email + "\n")
 
-	pass
+	outFile.close()
 
 def findAge(a):
 # def findAge(a):
@@ -112,8 +119,8 @@ def findAge(a):
 # Output: Return the average age of the students and round that age to the nearest
 # integer.  You will need to work with the DOB and the current date to find the current
 # age in years.
-
 	pass
+
 
 
 ################################################################
