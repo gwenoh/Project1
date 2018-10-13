@@ -46,8 +46,10 @@ def mySort(data,col):
 # Sort based on key/column
 #Input: list of dictionaries and col (key) to sort on
 #Output: Return the first item in the sorted list as a string of just: firstName lastName
+	sorteddata = sorted(data, key=lambda x:x[col])
+	item = sorteddata[0]
 
-	pass
+	return (item["First"] + " " + item["Last"])
 
 
 def classSizes(data):
