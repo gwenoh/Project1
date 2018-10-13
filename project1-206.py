@@ -83,8 +83,19 @@ def findMonth(a):
 # Find the most common birth month form this data
 # Input: list of dictionaries
 # Output: Return the month (1-12) that had the most births in the data
+	DOB_dic = {}
 
-	pass
+	for x in a:
+		split_DOB = x["DOB"].split("/")
+		month = int(split_DOB[0])
+		if month not in DOB_dic:
+			DOB_dic[month] = 1
+		else:
+			DOB_dic[month] += 1
+
+	sorted_DOB = sorted(DOB_dic.items(), key=lambda x:x[1], reverse=True)
+
+	return (sorted_DOB[0][0])
 
 def mySortPrint(a,col,fileName):
 #Similar to mySort, but instead of returning single
